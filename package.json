@@ -44,11 +44,9 @@
     "react": ">= 0.14",
     "react-dom": ">= 0.14"
   },
-  "files": [
-    "node_package/lib",
-    "webpackConfigLoader.js"
-  ],
+  "files": ["node_package/lib", "webpackConfigLoader.js"],
   "scripts": {
+    "start": "nps",
     "test": "babel-tape-runner -r node_package/tests/helpers/test_helper.js node_package/tests/*.js | tap-spec",
     "clean": "rm -rf node_package/lib",
     "prepare": "yarn run build",
@@ -58,7 +56,7 @@
     "build-watch": "babel --watch --out-dir node_package/lib node_package/src",
     "eslint": "eslint .",
     "flow": "flow check node_package",
-    "lint": "yarn run eslint && yarn run flow",
+    "lint": "nps lint",
     "check": "yarn run lint && yarn run flow && yarn run test",
     "prerelease": "yarn run check && yarn run clean && yarn run build",
     "release:patch": "node_package/scripts/release patch",
@@ -72,14 +70,7 @@
     "type": "git",
     "url": "git+https://github.com/shakacode/react_on_rails.git"
   },
-  "keywords": [
-    "react",
-    "webpack",
-    "JavaScript",
-    "Ruby",
-    "on",
-    "Rails"
-  ],
+  "keywords": ["react", "webpack", "JavaScript", "Ruby", "on", "Rails"],
   "author": "justin.gordon@gmail.com",
   "license": "MIT",
   "bugs": {
@@ -88,6 +79,7 @@
   "homepage": "https://github.com/shakacode/react_on_rails#readme",
   "dependencies": {
     "@babel/runtime-corejs2": "^7.0.0",
+    "concurrently": "^4.0.1",
     "nps": "^5.9.3",
     "prettier": "^1.14.3",
     "prettier-eslint-cli": "^4.7.1"

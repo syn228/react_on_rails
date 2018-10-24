@@ -1,11 +1,16 @@
 scripts:
   lint:
     description: Run all linters (eslint, flow)
-    script: concurrently --prefix "[{name}]" --names "ESLINT" -c "blue,yellow,magenta,orange" "nps eslint"
+    script: concurrently --prefix "[{name}]" --names "ESLINT,FLOW" -c "blue,yellow" "nps eslint" "nps flow"
+
+  flow:
+    default:
+      description: Run flow on node_package
+      script: flow check node_package
 
   eslint:
     default:
-      description: Run eslint.
+      description: Run eslint .
       script: eslint . --ext ".js,.jsx"
     fix:
       description: Run eslint and auto-fix.
@@ -37,10 +42,7 @@ scripts:
     json:
       default:
         description: Run prettier on JSON files.
-        script: rm -rf packages/vm-renderer/tests/tmp && prettier "**/*.json" --write
+        script: prettier "**/*.json" --write
       listDifferent:
         description: Check if any JSON files would change by running prettier-eslint.
         script: prettier "**/*.json" "../spec/**/*.json" --list-different
-  renderer:
-    description: Starts the node renderer.
-    script: node renderer.js
