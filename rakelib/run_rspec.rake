@@ -127,5 +127,5 @@ end
 
 def clean_gen_assets(dir)
   path = calc_path(dir)
-  sh_in_dir(path.realpath, "yarn start build:clean")
+  sh_in_dir(path.realpath, "yarn run build:clean")
 end

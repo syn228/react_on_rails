@@ -58,7 +58,7 @@ matrix:
     - gemfile: spec/dummy_no_webpacker/Gemfile.rails32
       rvm: 2.4.1
     - gemfile: spec/dummy_no_webpacker/Gemfile.rails32
-      rvm: 2.5.0
+      rvm: 2.5.1
     - gemfile: spec/dummy/Gemfile
       rvm: 2.2.6
 
