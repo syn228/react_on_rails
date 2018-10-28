@@ -15,9 +15,9 @@ namespace :lint do # rubocop:disable Metrics/BlockLength
     sh_in_dir(gem_root, "bundle exec scss-lint spec/dummy/app/assets/stylesheets/")
   end
 
-  desc "Run flow from shell"
+  desc "Run linters and flow from shell"
   task :js_checks do
-    sh_in_dir(gem_root, "nps check")
+    sh_in_dir(gem_root, "yarn start check")
   end
 
   desc "Run all eslint, flow, rubocop linters. Skip ruby-lint and scss"
