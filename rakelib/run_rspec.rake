@@ -84,9 +84,9 @@ namespace :run_rspec do
 end
 # rubocop:enable Metrics/BlockLength
 
-desc "js tests (same as 'yarn run test')"
+desc "js tests (same as 'yarn start test')"
 task :js_tests do
-  sh "yarn run test"
+  sh "yarn start test"
 end
 
 msg = <<-DESC.strip_heredoc
@@ -127,5 +127,5 @@ end
 
 def clean_gen_assets(dir)
   path = calc_path(dir)
-  sh_in_dir(path.realpath, "yarn run build:clean")
+  sh_in_dir(path.realpath, "yarn start build:clean")
 end
