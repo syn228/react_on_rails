@@ -62,7 +62,7 @@ scripts:
 
   build:
     default:
-      script: yarn run clean && yarn run babel
+      script: nps clean && nps babel
 
     watch:
       script: babel --watch --out-dir node_package/lib node_package/src
